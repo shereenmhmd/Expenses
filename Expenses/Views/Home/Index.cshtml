@@ -1,0 +1,38 @@
+﻿@model System.Collections.Generic.IEnumerable<Expense>
+
+
+<div class="text-center">
+    <h1 class="display-4 mb-4">My Expenses</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <a class="btn btn-primary float-right mb-4 text-white" asp-action="Create">Create new expense</a>
+            <table class="table-bordered table-striped " width="100%">
+                <thead class="text-center">
+                    <tr>
+                        <th width="40%">Expense</th>
+                        <th width="40%">Amount</th>
+                        <th width="20%">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var Expense in Model)
+                    {
+                        <tr>
+                            <td>@Expense.ExpenseName</td>
+                            <td>@Expense.Amount</td>
+                            <td>
+                                <div class="btn-group w-100" role="group">
+                                    <a class="btn btn-primary mx-1" asp-action="Update" asp-route-id="@Expense.Id">Update</a>
+                                    <a class="btn btn-danger mx-1" asp-action="Delete" asp-route-id="@Expense.Id">Delete</a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

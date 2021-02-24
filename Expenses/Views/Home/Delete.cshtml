@@ -1,0 +1,39 @@
+﻿@model Expense
+
+<div class="text-center">
+    <h1 class="display-4 mb-4">Delete Expense</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <form asp-action="DeleteExpense" method="post">
+                <input hidden asp-for="Id" />
+                <div class="form-group row">
+                    <div class="col-6">
+                        <label asp-for="ExpenseName"></label>
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="Amount"></label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-6">
+                        <input disabled asp-for="ExpenseName" class="form-control" />
+                    </div>
+                    <div class="col-6">
+                        <input disabled asp-for="Amount" class="form-control" />
+                    </div>
+                    </div>
+                <div class="form-group row mt-4">
+                    <div class="col-2 offset-4">
+                        <a class="btn btn-success w-100 mx-2" asp-action="Index">Home</a>
+                    </div>
+                    <div class="col-2">
+                        <input type="submit" class="btn btn-danger w-100 mx-2" value="Delete" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
